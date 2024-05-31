@@ -83,4 +83,14 @@ public class Test : MonoBehaviour
 
     [EditorCools.Button(row: "row-2")]
     private void Row2Button3() => Debug.Log("Row 3 Button 3");
+
+    [Disabled]
+    public string alwaysDisabled = "This value can't be edited";
+
+    public bool disableFieldBelow;
+
+    [Disabled(nameof(GetToggleDisable))]
+    public string toggledDisable = "This value can be edited sometimes";
+
+    private bool GetToggleDisable() => disableFieldBelow;
 }
